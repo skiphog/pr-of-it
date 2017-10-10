@@ -1,0 +1,52 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1><%=title %></h1>
+        <p><%=description %></p>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Год выпуска</th>
+                <th>Цена</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% auto.forEach(function(a) { %>
+            <tr>
+                <td><%=a.Name %></td>
+                <td><%=a.Year %></td>
+                <td><%=a.Price %></td>
+                <td>
+                    <div class="pull-right">
+                        <a class="pull-right" href="#">Изменить</a>
+                        <a class="pull-right" href="#">Удалить</a>                        
+                    </div>
+                </td>
+            </tr>
+        <% }); %>        
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
