@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <% include ../partials/head %>
+    <% include ../partials/head.ejs %>
 </head>
 <body class="container">
 
 <header>
-    <% include ../partials/header %>
+    <% include ../partials/header.ejs %>
 </header>
 
 <main>
@@ -34,8 +34,8 @@
                 <td><%=a.Price %></td>
                 <td>
                     <div class="pull-right">
-                        <a class="pull-right" href="#">Изменить</a>
-                        <a class="pull-right" href="#">Удалить</a>                        
+                        <a class="pull-right" href="/auto/<%=a.Id %>/delete">Удалить</a>
+                        <a class="pull-right " href="/auto/<%=a.Id %>/edit">Изменить</a>
                     </div>
                 </td>
             </tr>
@@ -45,7 +45,7 @@
 </main>
 
 <footer>
-    <% include ../partials/footer %>
+    <% include ../partials/footer.ejs %>
 </footer>
 
 </body>

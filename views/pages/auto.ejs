@@ -18,22 +18,41 @@
         <div class="col-md-8">
 
             <div class="panel panel-default">
-                <div class="panel-heading">Новый автомобиль</div>
+
+                <div class="panel-heading">
+                    <% if(!data.Id) {%>
+                    Новый автомобиль
+                    <% }else {%>
+                    Редактировать атомобиль
+                    <% } %>
+                </div>
+
                 <div class="panel-body">
+
                     <form role="form" method="POST">
+
                         <div class="form-group">
-                            <label>Название</label>
-                            <input type="text" name="name" class="form-control">
+                            <label for="text">Название</label>
+                            <input type="text"
+                                    id="text"
+                                    name="name"
+                                    class="form-control" value="<% if(data.Name) {%><%=data.Name%><%}%>">
                         </div>
                         <div class="form-group">
-                            <label>Год выпуска</label>
-                            <input type="number" id="year" name="year" class="form-control">
+                            <label for="year">Год выпуска</label>
+                            <input type="number"
+                                    id="year"
+                                    name="year"
+                                    class="form-control" value="<% if(data.Year) {%><%=data.Year%><%}%>">
                         </div>
                         <div class="form-group">
-                            <label>Цена</label>
-                            <input type="number" name="price" class="form-control">
+                            <label for="price">Цена</label>
+                            <input type="number"
+                                    id="price"
+                                    name="price"
+                                    class="form-control" value="<% if(data.Price) {%><%=data.Price%><%}%>">
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Добавить">
+                        <input type="submit" class="btn btn-primary" value="Сохранить">
                     </form>
                 </div>
             </div>
