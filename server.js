@@ -60,6 +60,7 @@ app.get('/auto/:id/edit', function (req, res) {
   if (item === undefined) {
     return res.status(404).send('Нет машинки для редактирования');
   }
+
   res.render('pages/auto', {data: item});
 });
 
